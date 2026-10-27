@@ -7,7 +7,7 @@ void main() {
       (WidgetTester tester) async {
     await tester.pumpWidget(const Force40App());
 
-    expect(find.text('40 Force'), findsWidgets);
+    expect(find.text('40FORCE'), findsWidgets);
     expect(find.text('Calendar'), findsOneWidget);
 
     await tester.tap(find.text('Graphs'));

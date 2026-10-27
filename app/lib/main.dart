@@ -11,8 +11,11 @@ class Force40App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '40 Force',
-      theme: ThemeData(colorSchemeSeed: Colors.teal, useMaterial3: true),
+      title: '40FORCE',
+      theme: ThemeData(
+        colorSchemeSeed: const Color(0xFF800020),
+        useMaterial3: true,
+      ),
       home: const HomeShell(),
     );
   }
@@ -45,7 +48,16 @@ class _HomeShellState extends State<HomeShell> {
       CardScreen(days: _days),
     ];
     return Scaffold(
-      appBar: AppBar(title: const Text('40 Force')),
+      appBar: AppBar(
+        title: const Text(
+          '40FORCE',
+          style: TextStyle(
+            fontWeight: FontWeight.w800,
+            letterSpacing: 2.5,
+            color: Color(0xFF800020),
+          ),
+        ),
+      ),
       body: pages[_index],
       bottomNavigationBar: NavigationBar(
         selectedIndex: _index,
@@ -418,7 +430,7 @@ class _ActivityCirclePainter extends CustomPainter {
 
   void _drawDashedCircle(Canvas canvas, Rect circle) {
     final paint = Paint()
-      ..color = const Color(0xFF2563EB)
+      ..color = const Color(0xFF800020)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.6;
     const dash = 0.22;
