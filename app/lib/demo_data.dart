@@ -16,7 +16,10 @@ List<DayData> buildDemoDays() {
         'energy': coffee ? 0.40 : 0.75,
         'mood': 0.55 + (i % 4) * 0.08,
       },
-      factors: coffee ? <String>{'coffee'} : <String>{},
+      factors: <String>{
+        if (coffee) 'coffee',
+        if (i >= 12 && i <= 16) 'period',
+      },
     );
   });
 }
